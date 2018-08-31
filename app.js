@@ -24,6 +24,10 @@ cameraTrigger.onclick = function() {
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
+    //restart the webpage when cameraTrigger2 is tapped
+        cameraTrigger.onclick = function() {
+          window.location.reload();
+        }
 };
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
